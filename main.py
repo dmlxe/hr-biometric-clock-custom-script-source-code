@@ -36,7 +36,7 @@ class MainWindow(QWidget):
         # Vinculate buttons to their respective functions
         self.button1.clicked.connect(self.selectFile_csv)
         self.button2.clicked.connect(self.selectFile_dat)
-        self.buttonCompute.clicked.connect(self.computeTEST)
+        self.buttonCompute.clicked.connect(self.compute)
 
         # File paths
         self.file_csv = None
@@ -60,7 +60,7 @@ class MainWindow(QWidget):
         else:
             self.label2.setText('Archivo de registros (.dat): ')
         
-    def computeTEST(self):
+    def compute(self):
         try:
             # Try to define the neccesary DataFrames with the selected files
             dfWorkers = pd.read_csv(self.file_csv)
